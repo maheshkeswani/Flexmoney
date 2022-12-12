@@ -18,7 +18,7 @@ const Payment = () => {
     const {Batch} =  {...data};
     if(Batch === undefined)
     {
-      toast.error('Please Select One Of The Batches', {
+toast.error('Please Select One Of The Batches', {
 position: "bottom-center",
 autoClose: 5000,
 hideProgressBar: false,
@@ -32,7 +32,7 @@ theme: "colored",
  
 else
     {
-    const url  = 'http://localhost:5000/payment'
+    const url  = 'https://flexmoney-backend.onrender.com/payment'
     const response = await fetch(url,{
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin

@@ -10,7 +10,7 @@ const Register = () => {
     setData({...data,[e.target.name]: e.target.value})
 
   }
-  const handleSubmit= async (e) => {
+  const handleSubmit=  async (e) => {
     e.preventDefault()
     const {Age} =  {...data};
     if( Age < 18 || Age > 65)
@@ -28,7 +28,7 @@ theme: "colored",
     }
     else
     {
-    const url  = 'http://localhost:5000/register'
+    const url  = 'https://flexmoney-backend.onrender.com/register'
     const response = await fetch(url,{
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
@@ -39,7 +39,7 @@ theme: "colored",
     },
     body: JSON.stringify(data) 
   })
-    response.json().then((msg) => {
+response.json().then((msg) => {
         if(msg.message === 'Success')
         {
 toast.success('Registration Successful', {
@@ -80,7 +80,7 @@ progress: undefined,
 theme: "colored",
 });
         }
-    });
+    })
       // API CALL TO POST Form Data 
 
     }

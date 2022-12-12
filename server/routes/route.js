@@ -5,6 +5,7 @@ const router = express.Router();
 router.route("/register").post(async function (req,res) 
 {
 const {Age,Gender,Name,Email} = req.body ;
+
 user.create({Age,Gender,Name,Email}).then((data) => {
     res.status(200).json({message : 'Success'});
 }).catch((err) => {
