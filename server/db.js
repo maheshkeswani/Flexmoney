@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 mongoose.set('strictQuery', false);
 const Connect = async () => {
   const URI  =  process.env.MONGO_URI
+console.log(URI);
   try {
     await mongoose.connect( URI,{
       useNewUrlParser: true
@@ -11,4 +12,4 @@ const Connect = async () => {
     console.log("Error while connecting with database : ", error);
   }
 };
-module.exports = Connect ; 
+module.exports = Connect ;
